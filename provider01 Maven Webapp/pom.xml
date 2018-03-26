@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+ <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sinhef</groupId>
+  <artifactId>provider01</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>provider01 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  
+  <dependencies>
+  
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- 本地service 依赖 -->
+    <dependency>
+    	<groupId>com.sinhef</groupId>
+    	<artifactId>service</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
+    <!-- dubbo -->  
+   
+   <dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>dubbo</artifactId>
+    <version>2.5.3</version>
+	</dependency>
+    
+    <!-- zookeeper -->
+    <dependency>
+    	<groupId>org.apache.zookeeper</groupId>
+    	<artifactId>zookeeper</artifactId>
+    	<version>3.3.3</version>
+    </dependency>
+    
+    <!-- 日志相关 -->
+    <dependency>
+    	<groupId>log4j</groupId>
+    	<artifactId>log4j</artifactId>
+    	<version>1.2.16</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-api</artifactId>
+    	<version>1.7.5</version>
+    </dependency>
+    
+    <!-- zookeeper client依赖， 用于向zookeeper注册服务 -->
+    <dependency>
+    	<groupId>com.github.sgroschupf</groupId>
+    	<artifactId>zkclient</artifactId>
+    	<version>0.1</version>
+    </dependency>
+    
+  </dependencies>
+  
+  
+  <build>
+    <finalName>provider01</finalName>
+    
+    	<pluginManagement>
+    		<plugins>
+    			<plugin>
+    				<groupId>org.apache.maven.plugins</groupId>
+    				<artifactId>maven-jar-plugin</artifactId>
+    				<configuration>
+    					<source>1.8</source>
+    					<target>1.8</target>
+    					
+    					<archive>
+    						<mainfest>
+    							<mainClass>com.test.provider.Provider</mainClass>
+    							<addClasspath>true</addClasspath>
+    							<classpathPrefix>lib/</classpathPrefix>
+    						</mainfest>
+    						
+    					</archive>
+    				</configuration>
+    			</plugin>
+    		</plugins>
+    	</pluginManagement>
+    
+    
+  </build>
+  
+</project>
