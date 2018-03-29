@@ -8,7 +8,7 @@ dubbo and zookeeper and nginx 负载均衡
 ### dubbo-consumer02 Maven Webapp 消费者2
 
 
-#nginx配置
+#nginx配置（负载均衡）
     
 
 ```
